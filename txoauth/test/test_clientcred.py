@@ -266,7 +266,7 @@ secondSpecificationRequest = MockRequest(args=requestArgs)
 _ALL = object()
 
 
-class _CredentialsExtractionTest(TestCase):
+class _CredentialsExtractionTest(object):
     interfaces = ()
     factory = None
 
@@ -323,7 +323,7 @@ class _SpecificationTests(_CredentialsExtractionTest):
 
 
 
-class ClientCredentialsExtractionTestCase(_SpecificationTests):
+class ClientCredentialsExtractionTestCase(_SpecificationTests, TestCase):
     interfaces = (IClientIdentifier, IClientIdentifierSecret)
     factory = staticmethod(clientcred._extractClientCredentials)
 
@@ -333,13 +333,13 @@ class ClientCredentialsExtractionTestCase(_SpecificationTests):
 
 
 
-class ClientIdentifierAdaptationTestCase(_SpecificationTests):
+class ClientIdentifierAdaptationTestCase(_SpecificationTests, TestCase):
     factory = IClientIdentifier
     interfaces = (IClientIdentifier,)
 
 
 
-class ClientIdentifierSecretAdaptationTestCase(_SpecificationTests):
+class ClientIdentifierSecretAdaptationTestCase(_SpecificationTests, TestCase):
     factory = IClientIdentifierSecret
     interfaces = (IClientIdentifierSecret,)
 

@@ -8,7 +8,7 @@ from twisted.cred.credentials import UsernamePassword
 from twisted.trial.unittest import TestCase
 
 
-class _TokenRequestTests(TestCase):
+class _TokenRequestTests(object):
     interface, implementer = None, None
     args, kwargs = (), {}
 
@@ -61,7 +61,7 @@ class _TokenRequestTests(TestCase):
 
 
 
-class BaseTokenRequestTestCase(_TokenRequestTests):
+class BaseTokenRequestTestCase(_TokenRequestTests, TestCase):
     interface, implementer = token.ITokenRequest, token._BaseTokenRequest
 
 
@@ -69,7 +69,7 @@ TYPE, ASSERTION = "IReactorFDSet", "awesome"
 BOGUS_TYPE, BOGUS_ASSERTION = "Thread", "not blowing up"
 
 
-class AssertionTests(_TokenRequestTests):
+class AssertionTests(_TokenRequestTests, TestCase):
     interface, implementer = token.IAssertion, token.Assertion
     args = TYPE, ASSERTION
 
@@ -97,7 +97,7 @@ class AssertionTests(_TokenRequestTests):
 CODE, BOGUS_CODE = "twisted", "threading"
 
 
-class AuthorizationCodeTests(_TokenRequestTests):
+class AuthorizationCodeTests(_TokenRequestTests, TestCase):
     interface, implementer = token.IAuthorizationCode, token.AuthorizationCode
     args = CODE,
 
@@ -116,7 +116,7 @@ class AuthorizationCodeTests(_TokenRequestTests):
 REFRESH_TOKEN, BOGUS_REFRESH_TOKEN = "deodorant", "skunk"
 
 
-class RefreshTokenTests(_TokenRequestTests):
+class RefreshTokenTests(_TokenRequestTests, TestCase):
     interface, implementer = token.IRefreshToken, token.RefreshToken
     args = REFRESH_TOKEN,
 
@@ -136,7 +136,7 @@ CREDENTIALS = UsernamePassword("lvh", "xyzzy")
 BOGUS_CREDENTIALS = UsernamePassword("skynet", "swordfish")
 
 
-class EndUserCredentialTests(_TokenRequestTests):
+class EndUserCredentialTests(_TokenRequestTests, TestCase):
     interface = token.IEndUserCredentials
     implementer = token.EndUserCredentials
     args = CREDENTIALS,
