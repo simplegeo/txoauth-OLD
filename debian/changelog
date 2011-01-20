@@ -1,5 +1,14 @@
 python-txoauth (1.0.0) lucid; urgency=low
 
+  [ Zooko Ofsimplegeo ]
+  * depends on twisted, not on httplib2
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Tue, 04 Jan 2011 22:12:51 +0000
+
+python-txoauth (1.0.0) lucid; urgency=low
+
   * Initial build for SimpleGeo
 
  -- SimpleGeo Nerds <nerds@simplegeo.com>  Tue, 4 Jan 2011 23:24:00 -0700
