@@ -46,7 +46,7 @@ setup(
     name="txoauth",
     version=verstr,
     description="provides OAuth 2.0 support for Twisted.",
-    author="Zooko Ofsimplegeo" # original author: Laurens Van Houtven
+    author="Zooko Ofsimplegeo", # original author: Laurens Van Houtven
     author_email="zooko@simplegeo.com",
     url="https://github.com/simplegeo/txoauth",
     packages = find_packages(),
