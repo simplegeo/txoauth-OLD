@@ -1,3 +1,9 @@
+python-txoauth (1.0.53) maverick; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Tue, 05 Jul 2011 20:09:19 +0000
+
 python-txoauth (1.0.16) lucid; urgency=low
 
   * UNRELEASED
